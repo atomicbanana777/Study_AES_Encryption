@@ -72,6 +72,12 @@ You can input your own key but it has to be 128 bits, 192 bits or 256 bits.
   - For decrypt, run `java -jar target/studyencrypt-1.0-SNAPSHOT.jar decrypt <The encrypted password>`
 
     It decrypt the encrypted password and print out in the console
-  
-  - For readProp, it is used for decrypting the password in MyProp.prop in order to simulate reading password in properties.
-  
+
+## About this Study
+  I know more about encryption such as Symmetric and Asymmetric.
+  I originally planned to add `Salt` and `Hashing Algorithm` to make the key more complex but later I think the generate key is enough.
+  If the key is human input, we may need to add them.
+
+  May be I should study Asymmetric next time.
+
+  I have also made some unit tests. I think I need to learn more about unit test.
