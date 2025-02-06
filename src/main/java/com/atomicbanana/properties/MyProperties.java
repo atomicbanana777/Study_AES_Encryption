@@ -12,7 +12,6 @@ public class MyProperties {
         properties = new Properties();
         properties.load(classLoader.getResourceAsStream(filename));
     }
-    
     public String getKey() {
         return properties.getProperty("key");
     }

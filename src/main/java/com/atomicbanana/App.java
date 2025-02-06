@@ -39,7 +39,6 @@ public class App
             MyProperties prop = new MyProperties("MyProp.prop");
             System.out.println(Encryptor.AESDecrypt(args[1], prop.getKey()));
         }
-            
     }
 }
 
