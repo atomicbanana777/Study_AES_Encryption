@@ -25,7 +25,6 @@ public class App
         System.out.println( "genKey" );
         System.out.println( "encrypt <password>" );
         System.out.println( "decrypt <encrypted password>" );
-        System.out.println( "readProp" );
         System.out.println( "==============================================" );
         if(args.length == 1 && args[0].equals("genKey")){
             System.out.println(GenerateKey.generateKeyString());
@@ -40,13 +39,6 @@ public class App
             MyProperties prop = new MyProperties("MyProp.prop");
             System.out.println(Encryptor.AESDecrypt(args[1], prop.getKey()));
         }
-
-        if(args.length == 1 && args[0].equals("readProp")){
-            MyProperties prop = new MyProperties("MyProp.prop");
-            System.out.println("This is a decrypted password: " + Encryptor.AESDecrypt(prop.getPassword(), prop.getKey()));
-        }
-            
-        
     }
 }
 

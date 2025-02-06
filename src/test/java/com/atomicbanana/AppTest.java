@@ -17,7 +17,6 @@ import org.junit.Test;
 
 import com.atomicbanana.GenerateKey.GenerateKey;
 import com.atomicbanana.encrypt.Encryptor;
-import com.atomicbanana.properties.MyProperties;
 
 /**
  * Unit test for simple App.
@@ -44,13 +43,14 @@ public class AppTest
     }
 
     @Test
-    public void IsKeyCorrect() throws IOException{
-        MyProperties myprop = new MyProperties("MyProp.prop");
-        assertEquals("NzEq29NJLBKap07QYnd/Rw==", myprop.getKey());
+    public void EncryptCorrectly() throws InvalidKeyException, NoSuchAlgorithmException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException{
+        String input = "reghreoghhhtuitrgu45867548697548-678459egihregire^&$%@#*($&@#*(&$/ewfewifhj))32423";
+        String encrypted = Encryptor.AESEncrypt(input, "NzEq29NJLBKap07QYnd/Rw==");
+        assertEquals("0IRe1fzdHkPw+p4+fiNvO3liITImA+EgxTDblxAi1FU+llRQIwq0fdmCVWjshfl7wUYYiYVQkm0rAJDh47sxY9Ee3OySKn8YowQYkxr43gimYed/JxcwsqlNEK+mFX8x", encrypted);
     }
 
     @Test
-    public void EncryptCorrectly() throws InvalidKeyException, NoSuchAlgorithmException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException{
+    public void DecryptCorrectly() throws InvalidKeyException, NoSuchAlgorithmException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException{
         String input = "password1234";
         String encrypted = Encryptor.AESEncrypt(input, "NzEq29NJLBKap07QYnd/Rw==");
         String decrypted = Encryptor.AESDecrypt(encrypted, "NzEq29NJLBKap07QYnd/Rw==");

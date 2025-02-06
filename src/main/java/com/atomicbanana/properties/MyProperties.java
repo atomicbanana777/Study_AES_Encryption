@@ -12,11 +12,6 @@ public class MyProperties {
         properties = new Properties();
         properties.load(classLoader.getResourceAsStream(filename));
     }
-
-    public String getPassword() {
-        return properties.getProperty("password");
-    }
-
     public String getKey() {
         return properties.getProperty("key");
     }
