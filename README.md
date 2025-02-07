@@ -94,3 +94,17 @@ Suggest using genKey option for creating new key
   May be I should study Asymmetric next time.
 
   I have also made some unit tests. I think I need to learn more about unit test.
+
+## Reference
+
+  - about AES
+  https://www.youtube.com/watch?v=lnKPoWZnNNM
+
+  - about RSA
+  https://www.youtube.com/watch?v=j2NBya6ADSY	
+
+  - about hash
+  https://www.youtube.com/watch?v=GI790E1JMgw
+  
+  - AES 256 Java Encryption Sample
+  https://howtodoinjava.com/java/java-security/aes-256-encryption-decryption/
