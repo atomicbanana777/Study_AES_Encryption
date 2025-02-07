@@ -5,8 +5,10 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.util.Base64;
 
 import javax.crypto.BadPaddingException;
@@ -103,5 +105,13 @@ public class AppTest
         String encrypted = Encryptor.AESEncrypt(input, "FU7dRNK27wX+i780GaK36cq16e0BIBOL");
         String decrypted = Encryptor.AESDecrypt(encrypted, "FU7dRNK27wX+i780GaK36cq16e0BIBOL");
         assertEquals(input, decrypted);
+    }
+
+    @Test
+    public void EncryptPBCorrectly() throws InvalidKeyException, NoSuchAlgorithmException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException, InvalidKeySpecException, InvalidAlgorithmParameterException, IOException{
+        String input = "encryptThis";
+        String PBKey = "password1234";
+        String encrypted = Encryptor.AESEncrypt_PB(input, PBKey);
+        assertEquals(input, Encryptor.AESDecrypt_PB(encrypted, PBKey));
     }
 }
