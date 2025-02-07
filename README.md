@@ -44,6 +44,8 @@ You can input your own key but it has to be 128 bits, 192 bits or 256 bits.
 
 
 ## To package
+
+  you may run `chmod 755 mvnw` in order to execute Maven wrapper `./mvnw`
   run `./mvnw package`
 
 ## To execute
