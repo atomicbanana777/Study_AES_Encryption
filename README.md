@@ -53,7 +53,7 @@ Suggest using genKey option for creating new key
 ## To execute
   run `java -jar target/studyencrypt-1.0-SNAPSHOT.jar`
 
-## Option
+## Usage
   - For generate a AES key, you can run `java -jar target/studyencrypt-1.0-SNAPSHOT.jar genKey`
     
     It generates a AES 128 key and output in the console.
