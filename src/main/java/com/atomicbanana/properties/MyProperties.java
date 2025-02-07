@@ -16,4 +16,16 @@ public class MyProperties {
         return properties.getProperty("key");
     }
 
+    public String getIterationCount() {
+        return properties.getProperty("iteration.count");
+    }
+
+    public String getKeyLength() {
+        return properties.getProperty("key.length");
+    }
+
+    public String getSalt() {
+        return properties.getProperty("salt");
+    }
+
 }
