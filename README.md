@@ -40,7 +40,9 @@ In this project, the key is located in `src/resources/MyProp.prop`
 
 The key is generated using program `GenerateKey.java`
 
-You can input your own key but it has to be 128 bits, 192 bits or 256 bits.
+You can input your own key but it has to be 128 bits, 192 bits or 256 bits and Base64 encoded.
+
+Suggest using genKey option for creating new key
 
 
 ## To package
@@ -54,26 +56,35 @@ You can input your own key but it has to be 128 bits, 192 bits or 256 bits.
 ## Option
   - For generate a AES key, you can run `java -jar target/studyencrypt-1.0-SNAPSHOT.jar genKey`
     
-    It generates a AES key and output in the console.
+    It generates a AES 128 key and output in the console.
     
     Noted that it will not update any files or properties.
     
     If you want to use the key for encrypt and decrypt, you have to update it in MyProp.prop.
-    
+
+  - For generate a AES key with custom size, you can run `java -jar target/studyencrypt-1.0-SNAPSHOT.jar genKey <key size>`
+
+    Noted that the size need to be 128 , 192 or 256 for AES to work.
   
   - For encrypt, run `java -jar target/studyencrypt-1.0-SNAPSHOT.jar encrypt <The password you want to encrypt>`
 
-    It encrypt the password you provide using the key in MyProp.prop.
+    It encrypt the password using the key in MyProp.prop.
 
     And print the encrypted password out in console.
 
     Noted that the output you saw in console was encoded by Base64.
 
     Since the actual encrypted password is a byte[], its not readable by human.
+
+  - For encrypt using custom key, run `java -jar target/studyencrypt-1.0-SNAPSHOT.jar encrypt <The password you want to encrypt> <Key>`
+
+    The Key should be the one you generate using genKey.
   
   - For decrypt, run `java -jar target/studyencrypt-1.0-SNAPSHOT.jar decrypt <The encrypted password>`
 
     It decrypt the encrypted password and print out in the console
+
+  - For decrypt using custom key, run `java -jar target/studyencrypt-1.0-SNAPSHOT.jar decrypt <The encrypted password> <Key>`
 
 ## About this Study
   I know more about encryption such as Symmetric and Asymmetric.
