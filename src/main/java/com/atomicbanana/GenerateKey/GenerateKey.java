@@ -8,9 +8,12 @@ import java.util.Base64;
 public class GenerateKey {
     
     public static final String cipher = "AES";
-    public static final int keySize = 128;
 
     public static String generateKeyString() throws NoSuchAlgorithmException, IOException{
+        return generateKeyString(128);
+    }
+
+    public static String generateKeyString(int keySize) throws NoSuchAlgorithmException, IOException{
         KeyGenerator keyGenerator = KeyGenerator.getInstance(cipher);
         keyGenerator.init(keySize);
         byte[] key = keyGenerator.generateKey().getEncoded();

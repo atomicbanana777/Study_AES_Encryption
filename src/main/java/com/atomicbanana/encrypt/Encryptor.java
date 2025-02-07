@@ -18,7 +18,7 @@ public class Encryptor {
     
     public static String AESEncrypt(String input, String keyString) throws InvalidKeyException, NoSuchAlgorithmException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException{
         Cipher cipher = Cipher.getInstance(ALGORITHM);
-        Key key = new SecretKeySpec(keyString.getBytes(), ALGORITHM);
+        Key key = new SecretKeySpec(Base64.getDecoder().decode(keyString), ALGORITHM);
         cipher.init(Cipher.ENCRYPT_MODE, key);
 
         byte[] encValue = cipher.doFinal(input.getBytes());
@@ -28,7 +28,7 @@ public class Encryptor {
 
     public static String AESDecrypt(String input, String keyString) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException{
         Cipher cipher = Cipher.getInstance(ALGORITHM);
-        Key key = new SecretKeySpec(keyString.getBytes(), ALGORITHM);
+        Key key = new SecretKeySpec(Base64.getDecoder().decode(keyString), ALGORITHM);
         cipher.init(Cipher.DECRYPT_MODE, key);
         
         byte[] inputValueByte = Base64.getDecoder().decode(input.getBytes());
